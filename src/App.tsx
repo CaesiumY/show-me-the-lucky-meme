@@ -1,12 +1,12 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import LayoutBlock from './pages/layout/layout';
+import IndexPage from './pages/IndexPage';
 
 const App = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<LayoutBlock>foo bar</LayoutBlock>} />
+        <Route path="/" element={<IndexPage />} />
       </Routes>
     </>
   );

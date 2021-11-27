@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 import Header from '../../components/Header';
 import Responsive from '../../components/Responsive';
 
