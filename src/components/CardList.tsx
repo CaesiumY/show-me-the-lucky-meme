@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { CardData } from '../constants/types';
 import CardItem from './CardItem';
 
 const CardListBlock = styled.div`
@@ -7,14 +8,10 @@ const CardListBlock = styled.div`
   max-width: 768px;
 `;
 
-type CardData = {
-  imageSrc: string;
-};
-
-const Card = ({ imageSrc }: CardData) => {
+const Card = ({ imageSrc, totalLines }: CardData) => {
   return (
     <CardListBlock>
-      <CardItem imageSrc={imageSrc} />
+      <CardItem imageSrc={imageSrc} totalLines={totalLines} />
     </CardListBlock>
   );
 };
