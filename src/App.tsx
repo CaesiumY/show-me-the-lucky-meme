@@ -1,12 +1,15 @@
-import React from 'react'
-import { Routes } from 'react-router-dom'
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import LayoutBlock from './pages/layout/layout';
 
 const App = () => {
   return (
-    <Routes>
-      <div>hello world</div>
-    </Routes>
-  )
-}
+    <>
+      <Routes>
+        <Route path="/" element={<LayoutBlock>foo bar</LayoutBlock>} />
+      </Routes>
+    </>
+  );
+};
 
-export default App
+export default App;
