@@ -31,7 +31,7 @@ const CardItem = ({ imageData, lines, onChangeField }: CardItemProps) => {
 
   return (
     <CardItemBlock>
-      {linesDefault.map((line, index) => (
+      {linesDefault.map((line) => (
         <input
           key={line}
           type="text"
