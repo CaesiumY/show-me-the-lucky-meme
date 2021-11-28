@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { CardData } from '../constants/types';
 import Button from './Button';
+import CanvasDrawing from './CanvasDrawing';
 import Input from './Input';
 
 const CardItemBlock = styled.article`
@@ -37,7 +38,7 @@ const CardItem = ({
   onChangeField,
   onSave,
 }: CardItemProps) => {
-  const { linesDefault, title } = imageData;
+  const { linesDefault, title, imageSrc } = imageData;
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -47,7 +48,11 @@ const CardItem = ({
   return (
     <CardItemBlock>
       <Title>{title}</Title>
-      <canvas></canvas>
+      <CanvasDrawing
+        imageSrc={imageSrc}
+        lines={lines}
+        linesDefault={linesDefault}
+      />
       {linesDefault.map((line) => (
         <Input
           key={line}
