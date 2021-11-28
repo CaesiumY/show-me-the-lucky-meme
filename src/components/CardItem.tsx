@@ -1,14 +1,22 @@
 import styled from '@emotion/styled';
 import { CardData } from '../constants/types';
+import Input from './Input';
 
 const CardItemBlock = styled.article`
   padding: 1rem;
   background-color: white;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 
   & + & {
     margin-top: 2rem;
   }
+`;
+
+const Title = styled.h2`
+  margin: 0;
 `;
 
 type LinesType = {
@@ -22,7 +30,7 @@ type CardItemProps = {
 };
 
 const CardItem = ({ imageData, lines, onChangeField }: CardItemProps) => {
-  const { linesDefault } = imageData;
+  const { linesDefault, title } = imageData;
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -31,8 +39,10 @@ const CardItem = ({ imageData, lines, onChangeField }: CardItemProps) => {
 
   return (
     <CardItemBlock>
+      <Title>{title}</Title>
+      <canvas></canvas>
       {linesDefault.map((line) => (
-        <input
+        <Input
           key={line}
           type="text"
           name={line}
@@ -41,6 +51,7 @@ const CardItem = ({ imageData, lines, onChangeField }: CardItemProps) => {
           value={lines[line] || ''}
         />
       ))}
+      <button>저장</button>
     </CardItemBlock>
   );
 };
