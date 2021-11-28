@@ -15,9 +15,10 @@ type CardListProps = {
   imageData: CardData[];
   lines: LinesType;
   onChangeField: ({ name, value }: { name: string; value: string }) => void;
+  onSave: () => void;
 };
 
-const Card = ({ imageData, lines, onChangeField }: CardListProps) => {
+const Card = ({ imageData, lines, onChangeField, onSave }: CardListProps) => {
   return (
     <CardListBlock>
       {imageData.map((data) => (
@@ -26,6 +27,7 @@ const Card = ({ imageData, lines, onChangeField }: CardListProps) => {
           imageData={data}
           onChangeField={onChangeField}
           lines={lines}
+          onSave={onSave}
         />
       ))}
     </CardListBlock>

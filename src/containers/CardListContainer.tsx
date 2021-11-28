@@ -10,11 +10,16 @@ const CardListContainer = () => {
     setLines((prev) => ({ ...prev, [name]: value }));
   };
 
+  const onSave = () => {
+    console.log('save');
+  };
+
   return (
     <CardList
       imageData={imageData}
       lines={lines}
       onChangeField={onChangeField}
+      onSave={onSave}
     />
   );
 };
