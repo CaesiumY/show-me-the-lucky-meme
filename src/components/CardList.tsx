@@ -4,14 +4,30 @@ import CardItem from './CardItem';
 
 const CardListBlock = styled.div`
   margin: 0 auto;
-  background-color: white;
   max-width: 768px;
 `;
 
-const Card = ({ imageSrc, totalLines }: CardData) => {
+type LinesType = {
+  [key: string]: string;
+};
+
+type CardListProps = {
+  imageData: CardData[];
+  lines: LinesType;
+  onChangeField: ({ name, value }: { name: string; value: string }) => void;
+};
+
+const Card = ({ imageData, lines, onChangeField }: CardListProps) => {
   return (
     <CardListBlock>
-      <CardItem imageSrc={imageSrc} totalLines={totalLines} />
+      {imageData.map((data) => (
+        <CardItem
+          key={data.title}
+          imageData={data}
+          onChangeField={onChangeField}
+          lines={lines}
+        />
+      ))}
     </CardListBlock>
   );
 };

@@ -1,4 +1,5 @@
 export type CardData = {
+  title: string;
   imageSrc: string;
-  totalLines: number;
+  linesDefault: string[];
 };
