@@ -1,9 +1,10 @@
+import AskBackContainer from '../containers/AskBackContainer';
 import Layout from './layout/Layout';
 
 const IndexPage = () => {
   return (
     <Layout>
-      <div>reset</div>
+      <AskBackContainer />
     </Layout>
   );
 };
