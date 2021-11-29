@@ -11,7 +11,7 @@ const LayoutBlock = styled(Responsive)`
   padding: 1.5rem;
 `;
 
-const layout = ({ children, ...rest }: layoutProp) => {
+const Layout = ({ children, ...rest }: layoutProp) => {
   return (
     <>
       <Header />
@@ -20,4 +20,4 @@ const layout = ({ children, ...rest }: layoutProp) => {
   );
 };
 
-export default layout;
+export default Layout;
