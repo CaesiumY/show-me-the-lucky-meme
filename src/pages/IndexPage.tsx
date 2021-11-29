@@ -1,10 +1,9 @@
-import CardListContainer from '../containers/CardListContainer';
 import Layout from './layout/Layout';
 
 const IndexPage = () => {
   return (
     <Layout>
-      <CardListContainer />
+      <div>reset</div>
     </Layout>
   );
 };
