@@ -8,6 +8,10 @@ const AskBackContainerBlock = styled.section`
   display: flex;
   align-items: center;
   justify-content: space-around;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const AskBackContainer = () => {
@@ -19,10 +23,10 @@ const AskBackContainer = () => {
 
   return (
     <AskBackContainerBlock>
-      <Card>
+      <Card top>
         <div>world</div>
       </Card>
-      <Card>
+      <Card bottom>
         <AskBackForm
           data={말대꾸}
           value={input}
