@@ -11,10 +11,7 @@ const AskBackContainerBlock = styled.section`
 `;
 
 const AskBackContainer = () => {
-  const [input, setInput] = useState({
-    first: '',
-    second: '',
-  });
+  const [input, setInput] = useState({});
 
   const onChangeInput = ({ key, value }: { key: string; value: string }) => {
     setInput((prev) => ({ ...prev, [key]: value }));

@@ -17,10 +17,24 @@ type AskBackFormProps = {
 };
 
 const AskBackForm = ({ data, value, onChangeInput }: AskBackFormProps) => {
+  const { linesDefault } = data;
+
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    onChangeInput({ key: name, value });
+  };
+
   return (
     <AskBackFormBlock>
-      <Input />
-      <Input />
+      {linesDefault.map((line) => (
+        <Input
+          key={line}
+          placeholder={line}
+          name={line}
+          onChange={onChange}
+          value={value[line] || ''}
+        />
+      ))}
     </AskBackFormBlock>
   );
 };
