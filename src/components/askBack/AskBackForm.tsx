@@ -1,11 +1,12 @@
 import styled from '@emotion/styled';
 import { 말대꾸type } from '../../constants/types';
+import Button from '../common/Button';
 import Input from '../common/Input';
 
 const AskBackFormBlock = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 1.5rem;
 `;
 
 type AskBackFormProps = {
@@ -35,6 +36,7 @@ const AskBackForm = ({ data, value, onChangeInput }: AskBackFormProps) => {
           value={value[line] || ''}
         />
       ))}
+      <Button>저장하기</Button>
     </AskBackFormBlock>
   );
 };

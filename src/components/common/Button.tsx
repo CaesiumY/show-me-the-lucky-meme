@@ -17,8 +17,12 @@ const StyledButton = styled.button`
   }
 `;
 
-const Button = ({ ...rest }) => {
-  return <StyledButton {...rest}></StyledButton>;
+type ButtonProps = {
+  children: React.ReactNode;
+};
+
+const Button = ({ children, ...rest }: ButtonProps) => {
+  return <StyledButton {...rest}>{children}</StyledButton>;
 };
 
 export default Button;
