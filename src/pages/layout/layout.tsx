@@ -8,7 +8,10 @@ type layoutProp = {
 };
 
 const LayoutBlock = styled(Responsive)`
-  padding: 1.5rem;
+  padding: 1rem;
+  @media (max-width: 768px) {
+    padding: 1rem 0;
+  }
 `;
 
 const Layout = ({ children, ...rest }: layoutProp) => {

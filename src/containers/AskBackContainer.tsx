@@ -11,9 +11,11 @@ const AskBackContainerBlock = styled.section`
   display: flex;
   align-items: center;
   justify-content: space-around;
+  gap: 1rem;
 
   @media (max-width: 768px) {
     flex-direction: column;
+    gap: 0;
   }
 `;
 
@@ -50,7 +52,7 @@ const AskBackContainer = () => {
   return (
     <AskBackContainerBlock>
       <Card top>
-        <AskBackFrame refForCapture={ref} />
+        <AskBackFrame data={말대꾸} refForCapture={ref} />
       </Card>
       <Card bottom>
         <AskBackForm
