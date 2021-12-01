@@ -15,6 +15,8 @@ type AskBackFormProps = {
   value: {
     [key: string]: string;
   };
+  isLoading: boolean;
+
   onChangeInput: ({ key, value }: { key: string; value: string }) => void;
   onCaptureElement: (ref: RefObject<HTMLDivElement>) => void;
   refForCapture: RefObject<HTMLDivElement>;
@@ -26,6 +28,7 @@ const AskBackForm = ({
   onChangeInput,
   onCaptureElement,
   refForCapture,
+  isLoading,
 }: AskBackFormProps) => {
   const { linesDefault } = data;
 
@@ -35,7 +38,6 @@ const AskBackForm = ({
   };
 
   const onClickSave = () => {
-    console.log(refForCapture);
     onCaptureElement(refForCapture);
   };
 
@@ -50,7 +52,9 @@ const AskBackForm = ({
           value={value[line] || ''}
         />
       ))}
-      <Button onClick={onClickSave}>저장하기</Button>
+      <Button isLoading={isLoading} onClick={onClickSave}>
+        저장하기
+      </Button>
     </AskBackFormBlock>
   );
 };

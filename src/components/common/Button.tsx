@@ -15,15 +15,24 @@ const StyledButton = styled.button`
   &:hover {
     background-color: #6ddb71;
   }
+
+  &:disabled {
+    background-color: gray;
+  }
 `;
 
 type ButtonProps = {
   children: React.ReactNode;
   onClick?: () => void;
+  isLoading: boolean;
 };
 
-const Button = ({ children, ...rest }: ButtonProps) => {
-  return <StyledButton {...rest}>{children}</StyledButton>;
+const Button = ({ children, isLoading, ...rest }: ButtonProps) => {
+  return (
+    <StyledButton disabled={isLoading} {...rest}>
+      {isLoading ? '로딩 중' : children}
+    </StyledButton>
+  );
 };
 
 export default Button;

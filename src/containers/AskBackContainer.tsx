@@ -11,7 +11,7 @@ const AskBackContainerBlock = styled.section`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  gap: 1rem;
+  gap: 3rem;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -21,6 +21,8 @@ const AskBackContainerBlock = styled.section`
 
 const AskBackContainer = () => {
   const [input, setInput] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
+
   const ref = useRef(null);
 
   const onChangeInput = ({ key, value }: { key: string; value: string }) => {
@@ -31,8 +33,9 @@ const AskBackContainer = () => {
     async (ref: RefObject<HTMLDivElement>) => {
       if (!ref.current) return;
 
-      // TODO - 로딩 스피너 추가
       try {
+        setIsLoading(true);
+
         const capturedUrl = await toPng(ref.current, {
           cacheBust: true,
           backgroundColor: 'white',
@@ -44,6 +47,8 @@ const AskBackContainer = () => {
       } catch (error) {
         console.error(error);
         alert('저장에 실패했습니다!');
+      } finally {
+        setIsLoading(false);
       }
     },
     [],
@@ -58,6 +63,7 @@ const AskBackContainer = () => {
         <AskBackForm
           data={말대꾸}
           value={input}
+          isLoading={isLoading}
           onChangeInput={onChangeInput}
           onCaptureElement={onCaptureElement}
           refForCapture={ref}

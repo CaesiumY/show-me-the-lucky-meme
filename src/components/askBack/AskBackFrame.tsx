@@ -21,7 +21,7 @@ const AskBackFrame = ({ refForCapture, data }: AskBackFrameProps) => {
 
   return (
     <AskBackFrameBlock>
-      <Title>{title}</Title>
+      <Title>{title} 짤</Title>
       <div ref={refForCapture}>
         <img width="100%" src={`${imageSrc}`} alt={`title`} />
         <p>프리텐다드</p>
