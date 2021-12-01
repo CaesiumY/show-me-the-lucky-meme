@@ -19,6 +19,7 @@ const StyledButton = styled.button`
 
 type ButtonProps = {
   children: React.ReactNode;
+  onClick?: () => void;
 };
 
 const Button = ({ children, ...rest }: ButtonProps) => {

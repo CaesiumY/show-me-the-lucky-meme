@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { RefObject } from 'react';
 import { 말대꾸type } from '../../constants/types';
 import Button from '../common/Button';
 import Input from '../common/Input';
@@ -15,14 +16,27 @@ type AskBackFormProps = {
     [key: string]: string;
   };
   onChangeInput: ({ key, value }: { key: string; value: string }) => void;
+  onCaptureElement: (ref: RefObject<HTMLDivElement>) => void;
+  refForCapture: RefObject<HTMLDivElement>;
 };
 
-const AskBackForm = ({ data, value, onChangeInput }: AskBackFormProps) => {
+const AskBackForm = ({
+  data,
+  value,
+  onChangeInput,
+  onCaptureElement,
+  refForCapture,
+}: AskBackFormProps) => {
   const { linesDefault } = data;
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     onChangeInput({ key: name, value });
+  };
+
+  const onClickSave = () => {
+    console.log(refForCapture);
+    onCaptureElement(refForCapture);
   };
 
   return (
@@ -36,7 +50,7 @@ const AskBackForm = ({ data, value, onChangeInput }: AskBackFormProps) => {
           value={value[line] || ''}
         />
       ))}
-      <Button>저장하기</Button>
+      <Button onClick={onClickSave}>저장하기</Button>
     </AskBackFormBlock>
   );
 };
