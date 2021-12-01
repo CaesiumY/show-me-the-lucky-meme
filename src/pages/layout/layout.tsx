@@ -8,9 +8,9 @@ type layoutProp = {
 };
 
 const LayoutBlock = styled(Responsive)`
-  padding: 1rem;
+  padding: 1.5rem;
   @media (max-width: 768px) {
-    padding: 1rem 0;
+    padding: 1.5rem 0;
   }
 `;
 

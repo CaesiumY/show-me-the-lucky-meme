@@ -9,6 +9,8 @@ const AskBackFrameBlock = styled.article`
 
 const Title = styled.h2`
   margin: 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid black;
 `;
 
 type AskBackFrameProps = {
