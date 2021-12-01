@@ -12,6 +12,8 @@ const CardBlock = styled.article<CardBlockProps>`
   border-radius: 8px;
 
   @media (max-width: 768px) {
+    width: 75%;
+
     ${({ top }) =>
       top &&
       css`
