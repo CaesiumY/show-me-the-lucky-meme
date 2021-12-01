@@ -29,11 +29,12 @@ const AskBackContainer = () => {
     try {
       const capturedUrl = await toPng(ref.current, { cacheBust: true });
       const link = document.createElement('a');
-      link.download = 'sample.png';
+      link.download = `${말대꾸.title}.png`;
       link.href = capturedUrl;
       link.click();
     } catch (error) {
       console.error(error);
+      alert('저장에 실패했습니다!');
     }
   };
 

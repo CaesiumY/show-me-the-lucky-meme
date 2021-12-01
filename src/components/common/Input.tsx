@@ -2,9 +2,9 @@ import styled from '@emotion/styled';
 
 const StyledInput = styled.input`
   font-size: 1.5rem;
-  border: none;
-  border-bottom: 1px solid black;
-  padding-bottom: 0.5rem;
+  border: 2px solid #373a47;
+  border-radius: 4px;
+  padding: 0.5rem;
   outline: none;
 `;
 
