@@ -57,7 +57,7 @@ const AskBackContainer = () => {
   return (
     <AskBackContainerBlock>
       <Card top>
-        <AskBackFrame data={말대꾸} refForCapture={ref} />
+        <AskBackFrame data={말대꾸} refForCapture={ref} lines={input} />
       </Card>
       <Card bottom>
         <AskBackForm
