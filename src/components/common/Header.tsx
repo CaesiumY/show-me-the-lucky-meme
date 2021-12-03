@@ -5,6 +5,8 @@ import Responsive from './Responsive';
 
 const HeaderBlock = styled.header`
   position: fixed;
+  top: 0;
+  z-index: 99;
   width: 100%;
   background-color: white;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
