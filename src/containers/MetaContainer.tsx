@@ -19,6 +19,7 @@ const MetaContainer = () => {
       <meta name="twitter:image:alt" content="말대꾸 짤" />
       <meta name="twitter:image:width" content="848" />
       <meta name="twitter:image:height" content="561" />
+      <meta name="description" content="쇼미더럭키밈 - 짤 생성기" />
     </Helmet>
   );
 };
