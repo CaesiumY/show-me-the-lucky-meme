@@ -12,13 +12,13 @@ const MetaContainer = () => {
       <meta property="og:image:alt" content="말대꾸 짤" />
       <meta property="og:image:width" content="848" />
       <meta property="og:image:height" content="561" />
-      <meta property="twitter:title" content="쇼미더럭키밈" />
-      <meta property="twitter:type" content="website" />
-      <meta property="twitter:description" content="쇼미더럭키밈 - 짤 생성기" />
-      <meta property="twitter:image" content="/images/crop.png" />
-      <meta property="twitter:image:alt" content="말대꾸 짤" />
-      <meta property="twitter:image:width" content="848" />
-      <meta property="twitter:image:height" content="561" />
+      <meta name="twitter:title" content="쇼미더럭키밈" />
+      <meta name="twitter:type" content="website" />
+      <meta name="twitter:description" content="쇼미더럭키밈 - 짤 생성기" />
+      <meta name="twitter:image" content="/images/crop.png" />
+      <meta name="twitter:image:alt" content="말대꾸 짤" />
+      <meta name="twitter:image:width" content="848" />
+      <meta name="twitter:image:height" content="561" />
     </Helmet>
   );
 };
