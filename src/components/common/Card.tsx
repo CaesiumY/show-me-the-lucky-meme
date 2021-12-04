@@ -11,8 +11,8 @@ const CardBlock = styled.article<CardBlockProps>`
   padding: 1rem;
   border-radius: 8px;
 
-  @media (max-width: 768px) {
-    width: 75%;
+  @media (max-width: 1024px) {
+    width: 80%;
 
     ${({ top }) =>
       top &&
@@ -26,6 +26,10 @@ const CardBlock = styled.article<CardBlockProps>`
         border-top-left-radius: 0;
         border-top-right-radius: 0;
       `}
+  }
+
+  @media (max-width: 768px) {
+    width: 90%;
   }
 `;
 

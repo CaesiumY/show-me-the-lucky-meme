@@ -14,14 +14,19 @@ const Title = styled.h2`
   border-bottom: 1px solid black;
 `;
 
-const FrameDiv = styled.div`
-  position: relative;
+const CenterBlock = styled.div`
   text-align: center;
+`;
+
+const FrameDiv = styled.div`
+  display: inline-block;
+  position: relative;
 `;
 
 const Image = styled.img`
   display: block;
   width: 100%;
+  max-width: 425px;
   height: auto;
 `;
 
@@ -54,14 +59,17 @@ const AskBackFrame = ({ refForCapture, data, lines }: AskBackFrameProps) => {
   return (
     <AskBackFrameBlock>
       <Title>{title} 짤</Title>
-      <FrameDiv ref={refForCapture}>
-        <Image width="100%" src={`${imageSrc}`} alt={`title`} />
-        {Object.keys(lines).map((key, index) => (
-          <Line key={key} pos={index}>
-            {lines[key]}
-          </Line>
-        ))}
-      </FrameDiv>
+      <CenterBlock>
+        <FrameDiv ref={refForCapture}>
+          <Image src={`${imageSrc}`} alt={`title`} />
+
+          {Object.keys(lines).map((key, index) => (
+            <Line key={key} pos={index}>
+              {lines[key]}
+            </Line>
+          ))}
+        </FrameDiv>
+      </CenterBlock>
     </AskBackFrameBlock>
   );
 };
