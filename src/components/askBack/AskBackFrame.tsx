@@ -31,14 +31,18 @@ const Image = styled.img`
 `;
 
 const Line = styled.p<LineProps>`
-  font-size: 4rem;
+  font-size: 3.5rem;
   user-select: none;
   width: 100%;
   position: absolute;
   margin: 0;
   ${({ pos }) => css`
-    top: ${pos * 520 + 90}px;
+    top: ${pos * 65 + 12}%;
   `}
+
+  @media (max-width: 473px) {
+    font-size: 12vw;
+  }
 `;
 
 type LineProps = {
