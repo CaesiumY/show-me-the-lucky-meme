@@ -1,5 +1,5 @@
 import AskBackContainer from '../containers/AskBackContainer';
-import Layout from './layout/Layout';
+import Layout from './Layout';
 
 const IndexPage = () => {
   return (

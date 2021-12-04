@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { ReactNode } from 'react';
-import Header from '../../components/common/Header';
-import Responsive from '../../components/common/Responsive';
+import Header from '../components/common/Header';
+import Responsive from '../components/common/Responsive';
 
 type layoutProp = {
   children: ReactNode;
