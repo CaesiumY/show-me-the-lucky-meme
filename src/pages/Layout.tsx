@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { ReactNode } from 'react';
+import Footer from '../components/common/Footer';
 import Header from '../components/common/Header';
 import Responsive from '../components/common/Responsive';
 
@@ -19,6 +20,7 @@ const Layout = ({ children, ...rest }: layoutProp) => {
     <>
       <Header />
       <LayoutBlock {...rest}>{children}</LayoutBlock>
+      <Footer />
     </>
   );
 };

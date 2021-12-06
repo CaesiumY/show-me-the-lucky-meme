@@ -12,6 +12,7 @@ const AskBackContainerBlock = styled.section`
   align-items: center;
   justify-content: space-around;
   gap: 3rem;
+  min-height: 800px;
 
   @media (max-width: 1024px) {
     flex-direction: column;
