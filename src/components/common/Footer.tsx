@@ -20,6 +20,7 @@ const ListBlock = styled.ul`
   align-items: center;
   width: 100%;
   padding: 0;
+  list-style: none;
 `;
 
 const FooterAnchor = styled.a`

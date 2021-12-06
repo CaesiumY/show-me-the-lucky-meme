@@ -18,6 +18,10 @@ const AskBackContainerBlock = styled.section`
     flex-direction: column;
     gap: 0;
   }
+
+  @media (max-width: 480px) {
+    justify-content: flex-start;
+  }
 `;
 
 const AskBackContainer = () => {
