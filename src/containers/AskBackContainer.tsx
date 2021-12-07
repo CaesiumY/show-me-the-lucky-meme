@@ -26,12 +26,17 @@ const AskBackContainerBlock = styled.section`
 
 const AskBackContainer = () => {
   const [input, setInput] = useState({});
+  const [isChecked, setIsChecked] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   const ref = useRef(null);
 
   const onChangeInput = ({ key, value }: { key: string; value: string }) => {
     setInput((prev) => ({ ...prev, [key]: value }));
+  };
+
+  const onCheck = (value: boolean) => {
+    setIsChecked(value);
   };
 
   const onCaptureElement = useCallback(
@@ -62,7 +67,12 @@ const AskBackContainer = () => {
   return (
     <AskBackContainerBlock>
       <Card top>
-        <AskBackFrame data={말대꾸} refForCapture={ref} lines={input} />
+        <AskBackFrame
+          data={말대꾸}
+          refForCapture={ref}
+          lines={input}
+          isChecked={isChecked}
+        />
       </Card>
       <Card bottom>
         <AskBackForm
@@ -72,6 +82,8 @@ const AskBackContainer = () => {
           onChangeInput={onChangeInput}
           onCaptureElement={onCaptureElement}
           refForCapture={ref}
+          isChecked={isChecked}
+          onCheck={onCheck}
         />
       </Card>
     </AskBackContainerBlock>

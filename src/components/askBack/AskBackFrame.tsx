@@ -55,9 +55,15 @@ type AskBackFrameProps = {
   lines: {
     [key: string]: string;
   };
+  isChecked: boolean;
 };
 
-const AskBackFrame = ({ refForCapture, data, lines }: AskBackFrameProps) => {
+const AskBackFrame = ({
+  refForCapture,
+  data,
+  lines,
+  isChecked,
+}: AskBackFrameProps) => {
   const { title, imageSrc } = data;
 
   return (
@@ -70,6 +76,7 @@ const AskBackFrame = ({ refForCapture, data, lines }: AskBackFrameProps) => {
           {Object.keys(lines).map((key, index) => (
             <Line key={key} pos={index}>
               {lines[key]}
+              {index === 0 && isChecked && '···'}
             </Line>
           ))}
         </FrameDiv>

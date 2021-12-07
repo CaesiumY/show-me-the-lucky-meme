@@ -10,6 +10,23 @@ const AskBackFormBlock = styled.div`
   gap: 1.5rem;
 `;
 
+const FlexDiv = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const Checkbox = styled.input`
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+`;
+
+const CheckboxLabel = styled.label`
+  cursor: pointer;
+  user-select: none;
+  line-height: 2rem;
+`;
+
 type AskBackFormProps = {
   data: 말대꾸type;
   value: {
@@ -20,6 +37,8 @@ type AskBackFormProps = {
   onChangeInput: ({ key, value }: { key: string; value: string }) => void;
   onCaptureElement: (ref: RefObject<HTMLDivElement>) => void;
   refForCapture: RefObject<HTMLDivElement>;
+  isChecked: boolean;
+  onCheck: (value: boolean) => void;
 };
 
 const AskBackForm = ({
@@ -29,6 +48,8 @@ const AskBackForm = ({
   onCaptureElement,
   refForCapture,
   isLoading,
+  isChecked,
+  onCheck,
 }: AskBackFormProps) => {
   const { linesDefault } = data;
 
@@ -41,15 +62,29 @@ const AskBackForm = ({
     onCaptureElement(refForCapture);
   };
 
+  const onCheckMiddleDot = (e: React.ChangeEvent<HTMLInputElement>) => {
+    onCheck(e.target.checked);
+  };
+
   return (
     <AskBackFormBlock>
+      <FlexDiv>
+        <Checkbox
+          type="checkbox"
+          name="middleDot"
+          id="middleDot"
+          onChange={onCheckMiddleDot}
+          checked={isChecked}
+        />
+        <CheckboxLabel htmlFor="middleDot"> ··· 추가하기</CheckboxLabel>
+      </FlexDiv>
       {linesDefault.map((line) => (
         <Input
           key={line}
           placeholder={line}
           name={line}
           onChange={onChange}
-          value={value[line] || ''}
+          value={`${value[line] || ''}`}
         />
       ))}
       <Button isLoading={isLoading} onClick={onClickSave}>
