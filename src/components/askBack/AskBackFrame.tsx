@@ -23,6 +23,17 @@ const FrameDiv = styled.div`
   position: relative;
 `;
 
+const BackgroundDiv = styled.div`
+  background-image: url('https://images.unsplash.com/photo-1638914962385-66e892b6c304?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1123&q=80');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: 27.7%;
+  width: 100%;
+  height: 42.5%;
+`;
+
 const Image = styled.img`
   display: block;
   width: 100%;
@@ -56,6 +67,7 @@ type AskBackFrameProps = {
     [key: string]: string;
   };
   isChecked: boolean;
+  custom?: boolean;
 };
 
 const AskBackFrame = ({
@@ -63,6 +75,7 @@ const AskBackFrame = ({
   data,
   lines,
   isChecked,
+  custom,
 }: AskBackFrameProps) => {
   const { title, imageSrc } = data;
 
@@ -71,6 +84,7 @@ const AskBackFrame = ({
       <Title>{title} 짤</Title>
       <CenterBlock>
         <FrameDiv ref={refForCapture}>
+          {custom && <BackgroundDiv></BackgroundDiv>}
           <Image src={`${imageSrc}`} alt={`title`} />
 
           {Object.keys(lines).map((key, index) => (
