@@ -4,6 +4,7 @@ import { RefObject, useCallback, useRef, useState } from 'react';
 import AskBackForm from '../components/askBack/AskBackForm';
 import AskBackFrame from '../components/askBack/AskBackFrame';
 import Card from '../components/common/Card';
+import ChangeImageButton from '../components/common/ChangeImageButton';
 
 import { 말대꾸_custom } from '../constants/data/data';
 
@@ -22,6 +23,13 @@ const CustomizeAskBackContainerBlock = styled.section`
   @media (max-width: 480px) {
     justify-content: flex-start;
   }
+`;
+
+const HorizontalSlicer = styled.hr`
+  background-color: black;
+  width: 100%;
+  height: 1px;
+  border: none;
 `;
 
 const CustomizeAskBackContainer = () => {
@@ -76,6 +84,8 @@ const CustomizeAskBackContainer = () => {
         />
       </Card>
       <Card bottom>
+        <ChangeImageButton />
+        <HorizontalSlicer />
         <AskBackForm
           data={말대꾸_custom}
           value={input}

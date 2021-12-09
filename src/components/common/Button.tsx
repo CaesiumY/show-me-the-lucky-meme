@@ -1,8 +1,13 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
-const StyledButton = styled.button`
+const styleTable = {
+  success: ['#5ab55e', '#6ddb71'],
+  primary: ['#0984e3', '#74b9ff'],
+};
+
+const StyledButton = styled.button<StyledButtonProps>`
   color: white;
-  background-color: #5ab55e;
   outline: none;
   border: none;
   border-radius: 4px;
@@ -11,25 +16,37 @@ const StyledButton = styled.button`
   font-weight: bold;
   cursor: pointer;
   transition: all 0.2s;
+  ${({ color }) =>
+    color &&
+    css`
+      background-color: ${styleTable[color][0]};
 
-  &:hover {
-    background-color: #6ddb71;
-  }
+      &:hover {
+        background-color: ${styleTable[color][1]};
+      }
+    `}
 
   &:disabled {
     background-color: gray;
   }
 `;
 
+type StyleTableKey = 'success' | 'primary';
+
+type StyledButtonProps = {
+  color: StyleTableKey;
+};
+
 type ButtonProps = {
   children: React.ReactNode;
   onClick?: () => void;
-  isLoading: boolean;
+  isLoading?: boolean;
+  color?: StyleTableKey;
 };
 
-const Button = ({ children, isLoading, ...rest }: ButtonProps) => {
+const Button = ({ children, isLoading, color, ...rest }: ButtonProps) => {
   return (
-    <StyledButton disabled={isLoading} {...rest}>
+    <StyledButton disabled={isLoading} color={color || 'success'} {...rest}>
       {isLoading ? '로딩 중' : children}
     </StyledButton>
   );
