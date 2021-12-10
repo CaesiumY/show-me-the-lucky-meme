@@ -19,6 +19,13 @@ const Wrapper = styled(Responsive)`
   align-items: center;
 `;
 
+const NavItem = styled.h4`
+  transition: all 0.5s;
+  &:hover {
+    transform: scale(1.1);
+  }
+`;
+
 const Spacer = styled.div`
   height: 4rem;
 `;
@@ -31,6 +38,9 @@ const Header = () => {
           <h2>
             <Link to="/">쇼미더럭키밈</Link>
           </h2>
+          <NavItem>
+            <Link to="/custom">🎨나만의 이미지 넣기</Link>
+          </NavItem>
         </Wrapper>
       </HeaderBlock>
       <Spacer />
