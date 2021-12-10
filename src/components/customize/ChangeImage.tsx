@@ -15,13 +15,10 @@ const ChangeImage = ({ onClickChangeImage }: ChangeImageProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const onClick = () => {
-    if (!inputRef.current) return;
-
-    inputRef.current.click();
+    inputRef.current?.click();
   };
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log('files', e.target.files);
     const { files } = e.target;
 
     if (!files) return;
@@ -32,7 +29,6 @@ const ChangeImage = ({ onClickChangeImage }: ChangeImageProps) => {
 
     reader.addEventListener('load', () => {
       const { result } = reader;
-      console.log('result', result);
       onClickChangeImage(result);
     });
   };

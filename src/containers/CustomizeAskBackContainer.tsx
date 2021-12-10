@@ -75,7 +75,6 @@ const CustomizeAskBackContainer = () => {
   );
 
   const onClickChangeImage = (url: imageFileBuffer) => {
-    console.log('changed to', url);
     setBackground(url);
   };
 
