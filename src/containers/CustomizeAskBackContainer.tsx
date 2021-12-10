@@ -4,9 +4,10 @@ import { RefObject, useCallback, useRef, useState } from 'react';
 import AskBackForm from '../components/askBack/AskBackForm';
 import AskBackFrame from '../components/askBack/AskBackFrame';
 import Card from '../components/common/Card';
-import ChangeImageButton from '../components/common/ChangeImageButton';
+import ChangeImage from '../components/customize/ChangeImage';
 
 import { 말대꾸_custom } from '../constants/data/data';
+import { imageFileBuffer } from '../constants/types';
 
 const CustomizeAskBackContainerBlock = styled.section`
   display: flex;
@@ -34,7 +35,7 @@ const HorizontalSlicer = styled.hr`
 
 const CustomizeAskBackContainer = () => {
   const [input, setInput] = useState({});
-  const [background, setBackground] = useState('');
+  const [background, setBackground] = useState<imageFileBuffer>('');
   const [isChecked, setIsChecked] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -73,11 +74,9 @@ const CustomizeAskBackContainer = () => {
     [],
   );
 
-  const onClickChangeImage = () => {
-    console.log('change');
-    setBackground(
-      'https://images.unsplash.com/photo-1638914962385-66e892b6c304?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1123&q=80',
-    );
+  const onClickChangeImage = (url: imageFileBuffer) => {
+    console.log('changed to', url);
+    setBackground(url);
   };
 
   return (
@@ -93,7 +92,7 @@ const CustomizeAskBackContainer = () => {
         />
       </Card>
       <Card bottom>
-        <ChangeImageButton onClick={onClickChangeImage} />
+        <ChangeImage onClickChangeImage={onClickChangeImage} />
         <HorizontalSlicer />
         <AskBackForm
           data={말대꾸_custom}

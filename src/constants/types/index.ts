@@ -3,3 +3,5 @@ export type 말대꾸type = {
   imageSrc: string;
   linesDefault: string[];
 };
+
+export type imageFileBuffer = string | ArrayBuffer | null

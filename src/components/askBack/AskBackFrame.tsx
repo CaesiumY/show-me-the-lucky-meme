@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { RefObject } from 'react';
-import { 말대꾸type } from '../../constants/types';
+import { imageFileBuffer, 말대꾸type } from '../../constants/types';
 
 const AskBackFrameBlock = styled.article`
   background-color: white;
@@ -27,7 +27,7 @@ const BackgroundDiv = styled.div<BackgroundDivProps>`
   ${({ backgroundSrc }) =>
     backgroundSrc &&
     css`
-      background-image: url(${backgroundSrc});
+      background-image: url(${backgroundSrc.toString()});
     `}
   background-repeat: no-repeat;
   background-position: center;
@@ -61,7 +61,7 @@ const Line = styled.p<LineProps>`
 `;
 
 type BackgroundDivProps = {
-  backgroundSrc?: string;
+  backgroundSrc?: imageFileBuffer;
 };
 
 type LineProps = {
@@ -75,7 +75,7 @@ type AskBackFrameProps = {
     [key: string]: string;
   };
   isChecked: boolean;
-  backgroundSrc?: string;
+  backgroundSrc?: imageFileBuffer;
   custom?: boolean;
 };
 
