@@ -21,7 +21,7 @@ const ChangeImage = ({ onClickChangeImage }: ChangeImageProps) => {
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { files } = e.target;
 
-    if (!files) return;
+    if (!files || files.length === 0) return;
     const imageFile = files[0];
 
     const reader = new FileReader();
