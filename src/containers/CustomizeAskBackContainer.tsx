@@ -34,6 +34,7 @@ const HorizontalSlicer = styled.hr`
 
 const CustomizeAskBackContainer = () => {
   const [input, setInput] = useState({});
+  const [background, setBackground] = useState('');
   const [isChecked, setIsChecked] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -72,6 +73,13 @@ const CustomizeAskBackContainer = () => {
     [],
   );
 
+  const onClickChangeImage = () => {
+    console.log('change');
+    setBackground(
+      'https://images.unsplash.com/photo-1638914962385-66e892b6c304?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1123&q=80',
+    );
+  };
+
   return (
     <CustomizeAskBackContainerBlock>
       <Card top>
@@ -80,11 +88,12 @@ const CustomizeAskBackContainer = () => {
           refForCapture={ref}
           lines={input}
           isChecked={isChecked}
+          backgroundSrc={background}
           custom
         />
       </Card>
       <Card bottom>
-        <ChangeImageButton />
+        <ChangeImageButton onClick={onClickChangeImage} />
         <HorizontalSlicer />
         <AskBackForm
           data={말대꾸_custom}
