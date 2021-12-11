@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async';
 const MetaContainer = () => {
   return (
     <Helmet>
-      <title>쇼미더럭키밈</title>
+      <title>쇼미더럭키밈 - 말대꾸 짤 생성기</title>
       <meta name="description" content="쇼미더럭키밈 - 짤 생성기" />
       <meta
         property="og:url"
@@ -32,6 +32,7 @@ const MetaContainer = () => {
         name="twitter:image"
         content="https://raw.githubusercontent.com/CaesiumY/show-me-the-lucky-meme/main/public/images/crop.png"
       />
+      <link rel="canonical" href="https://show-me-the-lucky-meme.vercel.app/" />
     </Helmet>
   );
 };
